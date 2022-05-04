@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .forms import TitreForm
+from . import models
 
 def index(request):
     return render(request, 'Titre/formulaire.html')
@@ -27,7 +28,7 @@ def all(request):
 def traitement(request):
     lform = TitreForm(request.POST)
     if lform.is_valid():
-        titre = lform.save()
-        return render(request,"Titre/home.html",{"Titre" : titre})
+        Titre = lform.save()
+        return render(request,"Titre/home.html",{"Titre" : Titre})
     else:
         return render(request,"Titre/formulaire.html",{"form": lform})

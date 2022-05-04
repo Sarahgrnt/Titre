@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ALL livres</title>
+    <title>ALL titre</title>
 </head>
 <body>
   <ol>
-      <li><a href="/Livre/ajout/">ajouter un livre</a></li>
-    {% for l in livres %}
-      <li> {{l.titre}} {{l.id}} <a href="/Livre/update/{{l.id}}">modifier</a> , <a href="/Livre/delete/{{l.id}}">supprimer</a>,<a href="/Livre/affiche.html"> détails</a></li>
+      <li><a href="/Titre/ajout/">ajouter un titre</a></li>
+    {% for l in titre %}
+      <li> {{l.titre}} {{l.id}} <a href="/Titre/update/{{l.id}}">modifier</a> , <a href="Titre/delete/{{l.id}}">supprimer</a>,<a href="Titre/affiche.html"> détails</a></li>
     {% endfor %}
   </ol>
 
