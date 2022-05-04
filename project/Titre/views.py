@@ -19,3 +19,15 @@ def formulaire(request):
 def home(request, id):
     titre = models.Titre.objects.get(pk=id)
     return render(request,"Titre/home.html",{"titre": titre})
+
+def all(request):
+    titre = list(models.Titre.objects.all())
+    return render(request,"Titre/all.html",{"titre":titre})
+
+def traitement(request):
+    lform = TitreForm(request.POST)
+    if lform.is_valid():
+        titre = lform.save()
+        return render(request,"Titre/home.html",{"Titre" : titre})
+    else:
+        return render(request,"Titre/formulaire.html",{"form": lform})
