@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    {% load static %}
+     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{%static 'Titre/index.css'%}">
+
+<title>{% block title %}Mon Site {% endblock %} </title>
+</head>
+<header>
+
+</header>
+<body>
+    <aside id="sidebar">
+        {% block sidebar %}
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/Titre/all">Index</a></li>
+            <li><a href="/Titre/formulaire">Formulaire</a></li>
+        </ul>
+        {% endblock %}
+    </aside>
+<div id="content">
+    {% block content %}
+        <h1> bloc principal </h1>
+    {% endblock %}
+</div>
+</body>
+</html>

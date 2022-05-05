@@ -3,8 +3,9 @@ from .forms import TitreForm
 from . import models
 from django.http import HttpResponseRedirect
 
-def index(request):
-    return render(request, 'Titre/formulaire.html')
+
+def main(request):
+    return render(request, 'Titre/main.html')
 
 def formulaire(request):
     if request.method == "POST":
