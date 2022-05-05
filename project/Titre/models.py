@@ -10,5 +10,9 @@ class Titre(models.Model):
     genre = models.CharField(max_length=100)
 
     def __str__(self):
-        chaine=f" Le nom du titre est {self.titre} parue en {self.date_parution}  par dirigé{self.directeur}"
+        chaine=f" Le nom du titre est {self.titre} parue en {self.date_parution}  par dirigé {self.directeur}"
         return chaine
+
+    def get_dico(self):
+        dico= {"titre" : self.titre, "directeur":self.directeur, "date_parution":self.date_parution, "duree":self.duree, "resume":self.resume, "acteur":self.acteur, "genre":self.genre}
+        return dico

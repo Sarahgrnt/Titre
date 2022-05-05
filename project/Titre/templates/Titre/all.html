@@ -6,9 +6,9 @@
 </head>
 <body>
   <ol>
-      <li><a href="/Titre/ajout/">ajouter un titre</a></li>
+      <li><a href="/Titre/formulaire/">ajouter un titre</a></li>
     {% for l in titre %}
-      <li> {{l.titre}} {{l.id}} <a href="/Titre/update/{{l.id}}">modifier</a> , <a href="Titre/delete/{{l.id}}">supprimer</a>,<a href="Titre/affiche.html"> détails</a></li>
+      <li> {{l.titre}} {{l.id}} <a href="/Titre/update/{{l.id}}">modifier</a> , <a href="Titre/delete/{{l.id}}">supprimer</a>,<a href="Titre/home.html"> détails</a></li>
     {% endfor %}
   </ol>
 
