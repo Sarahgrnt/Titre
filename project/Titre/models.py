@@ -10,5 +10,5 @@ class Titre(models.Model):
     genre = models.CharField(max_length=100)
 
     def __str__(self):
-        chaine=f" Le nom du titre est {self.nom} parue en {self.date_parution}  par dirigé{self.directeur}"
+        chaine=f" Le nom du titre est {self.titre} parue en {self.date_parution}  par dirigé{self.directeur}"
         return chaine

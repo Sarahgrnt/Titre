@@ -8,7 +8,7 @@ class TitreForm(ModelForm):
         model = models.Titre
         fields = ('titre', 'directeur', 'date_parution', 'duree','resume','acteur','genre')
         labels = {
-            'titre' : _('Titre'),
+            'titre' : _('titre'),
             'directeur' : _('directeur') ,
             'date_parution' : _('date de parution'),
             'duree' : _('durée'),

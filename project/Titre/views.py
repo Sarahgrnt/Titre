@@ -29,6 +29,6 @@ def traitement(request):
     lform = TitreForm(request.POST)
     if lform.is_valid():
         Titre = lform.save()
-        return render(request,"Titre/home.html",{"Titre" : Titre})
+        return render(request,"Titre/home.html",{"Titre": Titre})
     else:
         return render(request,"Titre/formulaire.html",{"form": lform})
