@@ -9,5 +9,11 @@ urlpatterns = [
     path('update/<int:id>/',views.update),
     path('traitementupdate/<int:id>/',views.traitementupdate),
     path('delete/<int:id>/',views.delete),
-    path("main/",views.main)
+    path("",views.main),
+    path('detail/<int:id>/', views.details),
+    path('form/',views.forms),
+    path('upgenre',views.upgenre),
+    path('idk',views.idk),
+    path('supp',views.supp)
+    path('traitementupdategenre/<int:id>/',views.traitementupdategenre)
 ]

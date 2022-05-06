@@ -3,27 +3,26 @@
 <head>
     {% load static %}
      <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="{%static 'Titre/index.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'index.css'%}">
 
-<title>{% block title %}Mon Site {% endblock %} </title>
+<title>{% block title %}Choix des titres {% endblock %} </title>
 </head>
 <header>
 
 </header>
 <body>
-    <aside id="sidebar">
+<div id="content">
+    {% block content %}
+        <h1>Bienvenue</h1>
+    {% endblock %}
+</div>
+   <aside id="sidebar">
         {% block sidebar %}
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/Titre/all">Index</a></li>
-            <li><a href="/Titre/formulaire">Formulaire</a></li>
+            <li><a href="/Titre/all">Tous les titres</a></li>
+            <li><a href="/Titre/genre">ajouter un genre</a></li>
         </ul>
         {% endblock %}
     </aside>
-<div id="content">
-    {% block content %}
-        <h1> bloc principal </h1>
-    {% endblock %}
-</div>
 </body>
 </html>

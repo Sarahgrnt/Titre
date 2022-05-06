@@ -16,3 +16,11 @@ class TitreForm(ModelForm):
             'acteur' : _('acteurs'),
             'genre' : _('genres'),
         }
+
+class GenreForm(ModelForm):
+    class Meta:
+        model =models.Genre
+        fields = ('genre',)
+        labels = {
+            'genre' : _('genre'),
+        }

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .forms import TitreForm
+from .forms import GenreForm
 from . import models
 from django.http import HttpResponseRedirect
 
@@ -7,12 +8,17 @@ from django.http import HttpResponseRedirect
 def main(request):
     return render(request, 'Titre/main.html')
 
+def details(request, id):
+    titre = models.Titre.objects.get(pk=id)
+    form = TitreForm(titre.get_dico())
+    return render(request,"Titre/detail.html",{"form":form,"id":id})
+
 def formulaire(request):
     if request.method == "POST":
         form = TitreForm(request)
         if form.is_valid():
             titre = form.save()
-            return render(request,"Titre/home.html",{"Titre" : titre})
+            return render(request,"all/home.html",{"Titre" : titre})
         else:
             return render(request,"Titre/formulaire.html",{"form": form})
     else :
@@ -56,4 +62,49 @@ def traitementupdate(request, id):
 
 def delete(request, id):
     models.Titre.objects.get(pk=id).delete()
+    return HttpResponseRedirect("/Titre/all")
+
+
+def forms(request):
+    if request.method == "POST":
+        form = GenreForm(request)
+        if form.is_valid():
+            genre = form.save()
+            return render(request,"Titre/main.html",{"genre" : genre})
+        else:
+            return render(request,"Titre/genre.html",{"form": form})
+    else :
+        form = GenreForm()
+        return render(request,"Titre/genre.html",{"form" : form})
+
+
+def idk(request):
+    lform = GenreForm(request.POST)
+    if lform.is_valid():
+        genre = lform.save()
+        return render(request,"Titre/all.html",{"genre": genre})
+    else:
+        return render(request,"Titre/forms.html",{"form": lform})
+
+
+
+def upgenre(request, id):
+    titre = models.Genre.objects.get(pk=id)
+    form = GenreForm(titre.get_dico())
+    return render(request,"Titre/upgenre.html",{"form":form,"id":id})
+
+
+def traitementupdategenre(request, id):
+    lform = GenreForm(request.POST)
+    if lform.is_valid():
+        Genre = lform.save(commit=False)
+        Genre.id = id;
+        Genre.save()
+        return HttpResponseRedirect("/Titre/all")
+    else:
+        return render(request, "Titre/upgenre.html", {"form": lform, "id": id})
+
+
+def supp(request, id):
+    models.Genre.objects.get(pk=id).delete()
     return HttpResponseRedirect("/Titre/all")

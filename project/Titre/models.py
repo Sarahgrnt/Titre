@@ -16,3 +16,10 @@ class Titre(models.Model):
     def get_dico(self):
         dico= {"titre" : self.titre, "directeur":self.directeur, "date_parution":self.date_parution, "duree":self.duree, "resume":self.resume, "acteur":self.acteur, "genre":self.genre}
         return dico
+
+class Genre(models.Model):
+    genre = models.CharField(max_length=100)
+
+    def __str__(self):
+        chaine=f"{self.genre}"
+        return chaine
