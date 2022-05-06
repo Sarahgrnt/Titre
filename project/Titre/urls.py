@@ -14,6 +14,6 @@ urlpatterns = [
     path('form/',views.forms),
     path('upgenre',views.upgenre),
     path('idk',views.idk),
-    path('supp',views.supp)
-    path('traitementupdategenre/<int:id>/',views.traitementupdategenre)
+    path('supp',views.supp),
+    path('traitementupdategenre/<int:id>/',views.traitementupdategenre),
 ]
