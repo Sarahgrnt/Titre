@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ALL titre</title>
+</head>
+<body>
+  <ol>
+      <li><a href="/Titre/forms/">ajouter un genre</a></li>
+    {% for l in titre %}
+      <li> {{l.titre}} <a href="/Titre/upgenre/{{l.id}}">modifier</a> , <a href="/Titre/supp/{{l.id}}/">supprimer</a>,<a href="/Titre/formulaires/"> ajouter titre</a></li>
+    {% endfor %}
+  </ol>
+</body>
+</html>

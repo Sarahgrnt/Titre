@@ -64,6 +64,10 @@ def delete(request, id):
     models.Titre.objects.get(pk=id).delete()
     return HttpResponseRedirect("/Titre/all")
 
+def triegenre(request):
+    genre = list(models.Genre.objects.all())
+    return render(request,"Titre/triegenre.html",{"genre":genre})
+
 
 def forms(request):
     if request.method == "POST":
@@ -82,7 +86,7 @@ def idk(request):
     lform = GenreForm(request.POST)
     if lform.is_valid():
         genre = lform.save()
-        return render(request,"Titre/all.html",{"Genre": genre})
+        return render(request,"Titre/triegenre.html",{"Genre": genre})
     else:
         return render(request,"Titre/genre.html",{"form": lform})
 
