@@ -82,10 +82,9 @@ def idk(request):
     lform = GenreForm(request.POST)
     if lform.is_valid():
         genre = lform.save()
-        return render(request,"Titre/all.html",{"genre": genre})
+        return render(request,"Titre/all.html",{"Genre": genre})
     else:
-        return render(request,"Titre/forms.html",{"form": lform})
-
+        return render(request,"Titre/genre.html",{"form": lform})
 
 
 def upgenre(request, id):
