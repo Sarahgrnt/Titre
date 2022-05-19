@@ -6,7 +6,7 @@ from django.http import HttpResponseRedirect
 
 
 def main(request):
-    return render(request, 'Titre/main.html')
+    return render(request,'Titre/main.html')
 
 def details(request, id):
     titre = models.Titre.objects.get(pk=id)
@@ -92,8 +92,8 @@ def idk(request):
 
 
 def upgenre(request, id):
-    titre = models.Genre.objects.get(pk=id)
-    form = GenreForm(titre.get_dico())
+    genre = models.Genre.objects.get(pk=id)
+    form = GenreForm(genre.get_dic())
     return render(request,"Titre/upgenre.html",{"form":form,"id":id})
 
 
@@ -110,4 +110,8 @@ def traitementupdategenre(request, id):
 
 def supp(request, id):
     models.Genre.objects.get(pk=id).delete()
-    return HttpResponseRedirect("/Titre/all")
+    return HttpResponseRedirect("/Titre/allgenre")
+
+def allgenre(request):
+    genre = list(models.Genre.objects.all())
+    return render(request,"Titre/allgenre.html",{"genre":genre})

@@ -19,8 +19,8 @@ class TitreForm(ModelForm):
 
 class GenreForm(ModelForm):
     class Meta:
-        model =models.Genre
+        model = models.Genre
         fields = ('genre',)
         labels = {
-            'genre' : _('genre'),
+            'genre': _('genre'),
         }

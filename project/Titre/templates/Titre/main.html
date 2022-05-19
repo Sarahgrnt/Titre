@@ -8,13 +8,15 @@
 <title>{% block title %}Page principale {% endblock %} </title>
 </head>
 <header>
-
+    {% block content %}
+    <a href="/Titre/genre">ajouter un genre</a>
+    <a href="/Titre/formulaire">ajouter un titre </a>
+    <a href="all">liste de vos titre</a>
+    <a href="Titre/allgenre">lister vos genre</a>
+    {% endblock %}
 </header>
 <body>
 <div id="content">
-    {% block content %}
-        <h1>Bienvenue</h1>
-    {% endblock %}
 </div>
    <aside id="sidebar">
         {% block sidebar %}

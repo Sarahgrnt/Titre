@@ -8,6 +8,10 @@ class Genre(models.Model):
         chaine=f"{self.genre}"
         return chaine
 
+    def dico(self):
+        dic={"genre":self.genre}
+        return dic
+
 
 class Titre(models.Model):
     titre = models.CharField(max_length=100)

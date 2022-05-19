@@ -13,3 +13,9 @@ li{
     color:white;
 
 }
+
+.tete{
+   display: flex;
+    justify-content: space-evenly;
+    background-color:blue;
+}
