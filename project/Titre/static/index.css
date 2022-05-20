@@ -20,3 +20,12 @@ a{
     background-opacity:20%;
     margin-bottom:1%;
 }
+
+article{
+    text-align: center;
+    list-style: none;
+    text-decoration: none;
+    color:black;
+
+}
+
