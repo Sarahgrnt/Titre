@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>ajout d'un Titre</title>
-</head>
+{% extends 'Titre/main.html' %}
+{% block content %}
 <body>
     <a href="/Titre/all">retour</a>
     <p> vous avez ajouté le livre suivant {{Titre}}</p>
-</body>
-</html>
+{% endblock %}

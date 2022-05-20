@@ -7,15 +7,16 @@ body{
     background-opacity:20%;
 }
 
-li{
+a{
     list-style: none;
     text-decoration: none;
-    color:white;
+    color:black;
 
 }
-
-.tete{
-   display: flex;
+.tete {
+    background-color:aquamarine;
+    display: flex;
     justify-content: space-evenly;
-    background-color:blue;
+    background-opacity:20%;
+    margin-bottom:1%;
 }

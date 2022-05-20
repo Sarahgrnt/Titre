@@ -93,7 +93,7 @@ def idk(request):
 
 def upgenre(request, id):
     genre = models.Genre.objects.get(pk=id)
-    form = GenreForm(genre.get_dic())
+    form = GenreForm(genre.dic())
     return render(request,"Titre/upgenre.html",{"form":form,"id":id})
 
 

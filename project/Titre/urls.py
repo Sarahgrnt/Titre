@@ -19,4 +19,5 @@ urlpatterns = [
     path('genre/',views.forms),
     path('triegenre/', views.triegenre),
     path('allgenre/',views.allgenre),
+    path('main/',views.main),
 ]

@@ -8,7 +8,7 @@ class Genre(models.Model):
         chaine=f"{self.genre}"
         return chaine
 
-    def dico(self):
+    def dic(self):
         dic={"genre":self.genre}
         return dic
 

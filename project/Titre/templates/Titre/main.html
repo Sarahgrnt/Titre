@@ -7,23 +7,21 @@
 
 <title>{% block title %}Page principale {% endblock %} </title>
 </head>
-<header>
-    {% block content %}
+<body>
+<header class="tete">
     <a href="/Titre/genre">ajouter un genre</a>
     <a href="/Titre/formulaire">ajouter un titre </a>
-    <a href="all">liste de vos titre</a>
-    <a href="Titre/allgenre">lister vos genre</a>
-    {% endblock %}
+    <a href="/Titre/all">liste de vos titres</a>
+    <a href="/Titre/allgenre">liste de vos genre</a>
+    <a href="/Titre/main">page principale</a>
+    <img src="/static/netflix.png" width="50px">
+
+
 </header>
-<body>
-<div id="content">
-</div>
-   <aside id="sidebar">
-        {% block sidebar %}
-        <ul>
-            <li><a href="/Titre/genre">ajouter un genre</a></li>
-        </ul>
-        {% endblock %}
-    </aside>
+ {% block content %}
+
+    {% endblock %}
+<p>Bienvenue sur mon site</p>
+
 </body>
 </html>

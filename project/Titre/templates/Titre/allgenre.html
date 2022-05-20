@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>ALL genre</title>
-</head>
-<body>
+{% extends 'Titre/main.html' %}
+{% block content %}
   <ol>
     {% for l in genre %}
       <li> {{l.genre}} <a href="/Titre/upgenre/{{l.id}}">modifier</a> , <a href="/Titre/supp/{{l.id}}/">supprimer</a></li>
     {% endfor %}
   </ol>
-</body>
-</html>
+{% endblock %}
